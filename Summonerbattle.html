@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Căn Lực - Project Detail</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #fff;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header a {
+            text-decoration: none;
+            color: #0077ff;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .detail {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .detail img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* New sections styling */
+        .section-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            color: #0077ff;
+            border-bottom: 2px solid #0077ff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .enemy-grid,
+        .action-grid,
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .enemy-card,
+        .action-card,
+        .asset-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #0077ff;
+        }
+
+        .enemy-card h4,
+        .action-card h4,
+        .asset-card h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .enemy-card img,
+        .action-card img,
+        .asset-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .asset-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .asset-item {
+            text-align: center;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .asset-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #0077ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background: #005ccc;
+        }
+
+        .pixel-art {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            /* fallback cho trình duyệt khác */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">&larr; Back to Portfolio</a>
+    </header>
+
+    <section>
+        <h1>Summoner Battle</h1>
+        <p><strong>Thể loại:</strong> Auto battle</p>
+        <p><strong>Thời gian phát triển:</strong> 3 tháng</p>
+        <p><strong>Team:</strong> 2</p>
+        <p><strong>Tech:</strong> Unity, C#, Piskel, GitHub</p>
+        <a href="https://doquockhanh.itch.io/summoner-battle" target="_blank" class="btn">Play on Itch.io</a>
+
+        <h2>Mô tả</h2>
+        <p>
+            Summoner Battle là một game chiến thuật auto-battle với cơ chế triệu hồi, được phát triển trên Unity.
+            Người chơi chọn các Summoner (Triệu hồi sư) để triệu hồi và chỉ huy các sinh vật chiến đấu trên lưới
+            hexagon.
+        </p>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Summoner - Card: Triệu hồi các unit dưới trướng mỗi interval</li>
+            <li>Summoner - Card: Dùng kỹ năng mỗi khi đủ mana/điều kiện.</li>
+            <li>Kỹ năng: Có 2 loại - Dùng trực tiếp lên sân hoặc dùng thông qua một unit mà bản thân triệu hồihồi</li>
+            <li>Unit: Di chuyển trên lưới hexagon, chạm trán unit đối phương và đánh Summoner địch</li>
+            <li>Hệ thống Stats: Khá tương đồng với stats của TFT</li>
+            <li>Status Effects: Các hiệu ứng trên unit, ví dụ như không thể chỉ định, trở nên tàng hình, thiêu đốt, hất
+                tung,..</li>
+            <li>Luới hexgon: Di chuyển 6 hướng, A* pathfinding</li>
+        </ul>
+
+        <h2>Vai trò của mình</h2>
+        <ul>
+            <li>Thiết kế và code hệ thống.</li>
+            <li>Tạo art/animation bằng piskel.</li>
+            <li>Đóng gói & publish lên itch.io.</li>
+        </ul>
+
+        <!-- Enemies Section -->
+        <div class="section-container">
+            <h2 class="section-title">Summoner</h2>
+            <p>Giới thiệu các loại Summoner</p>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/SummonerBattler/Assasin_Idle.png">
+                    <h4>Assassin</h4>
+                    <p>Kỹ năng: Assassin mạnh nhất trở nên tàng hình, không thể chỉ định, dịch chuyển đến yếu trong tầm
+                    </p>
+                    <p>Bị động: Tất cả assassin khi tiêu diệt 1 mục tiêu được hưởng hiệu ứng không thể chỉ định trong 2
+                        giây</p>
+                </div>
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/SummonerBattler/BlackSmith_Idle.png" alt="">
+                    <h4>Black Smith</h4>
+                    <p>Kỹ năng: Thợ rèn mạnh nhất rèn ra tấm khiên. Khi khiên vỡ truyền lại cho n đồng minh gần nhất</p>
+                </div>
+            </div>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/SummonerBattler/DeadEye_Idle.png" alt="">
+                    <h4>DeadEye</h4>
+                    <p>Bị động: Tất cả DeadEye tự động nhắm kẻ địch yếu nhất trong tầm và bắn một phát cường hóa</p>
+                    <p>Bị động: Tất cả DeadEye có khả năng kết liễu kẻ địch dưới ngưỡng</p>
+                </div>
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/SummonerBattler/Furious Cavalry.png" alt="">
+                    <h4>Furious Cavalry</h4>
+                    <p>Kỹ năng: Lướt vào hướng đông kẻ địch, hất tung và gây sát thương. Tăng bản thân khả năng hút máu
+                    </p>
+                </div>
+            </div>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/SummonerBattler/Guardian-Idle.png" alt="">
+                    <h4>Guardian</h4>
+                    <p>Kỹ năng: Guardian mạnh nhất Tăng giáp, kháng phép trong phạm vi</p>
+                </div>
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/SummonerBattler/healer_attack.png" alt="">
+                    <h4>Healer</h4>
+                    <p>Kỹ năng: Hồi máu cho đồng minh</p>
+                </div>
+            </div>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/SummonerBattler/JungleGuardian_Attack.png" alt="">
+                    <h4>Jungle Guardian</h4>
+                    <p>Kỹ năng: JG mạnh nhất được giảm sát thương nhận vào. Khiêu khích tất cả kẻ địch và phản sát
+                        thương cho kẻ tấn công trong vài giây</p>
+                </div>
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/SummonerBattler/knight_slash.png" alt="">
+                    <h4>Knight</h4>
+                    <p>Kỹ năng: knigh mạnh nhất Chém mạnh vào kẻ địch, gây sát thương chính, hất tung kẻ đó. Gây sát
+                        thương lan cho kẻ địch xung quanh</p>
+                </div>
+            </div>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/SummonerBattler/low attack.png" alt="">
+                    <h4>Archer</h4>
+                    <p>Kỹ năng: Bắn 5 đợt mưa tên lên khu vực đông nhất. Mỗi đợt tên gây sát thương</p>
+                </div>
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/SummonerBattler/MageIdle.png" alt="">
+                    <h4>Mage</h4>
+                    <p>Kỹ năng: Gây sát thương lên khu vực đông nhất. Gây sát thương và thiêu đốt, giảm hồi máu</p>
+                </div>
+            </div>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/SummonerBattler/ShadowSocerce_Runn.png" alt="">
+                    <h4>Shadow Socerce</h4>
+                    <p>Kỹ năng: Gây sát thương nhỏ lên toàn kẻ địch, giảm kháng phép kẻ địch</p>
+                    <p>Bị động: Tất cả Shadow Socerce được từ chối tử thần trong vài giây. Lúc đó, tăng tốc đánh và gây onhit sát thương</p>
+                </div>
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/SummonerBattler/VoidWalk.png" alt="">
+                    <h4>Void Socerer</h4>
+                    <p>Kỹ năng: Triệu hồi bọ hư không tìm đến kẻ địch và phát nổ</p>
+                </div>
+            </div>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <p>Còn một số summoner chưa có asset.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gameplay Screenshots -->
+        <div class="section-container">
+            <h2 class="section-title">Gameplay Screenshots</h2>
+            <div class="detail">
+                <img src="Imgs/SummonerBattler/WorldMap.png" alt="Gameplay 1">
+                <img src="Imgs/SummonerBattler/BattleScene.png" alt="Gameplay 2">
+            </div>
+        </div>
+
+
+    </section>
+</body>
+
+</html>

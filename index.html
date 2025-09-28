@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Game Portfolio</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f9f9f9; color: #333; }
+    header { background: #fff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    header nav a { margin: 0 10px; text-decoration: none; color: #333; font-weight: bold; }
+    header nav a:hover { color: #0077ff; }
+    section { padding: 50px 20px; max-width: 1000px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 30px; }
+    .projects, .assets { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+    .card img { width: 100%; height: 180px; object-fit: cover; }
+    .card-content { padding: 15px; }
+    .skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .skill { background: #e6f0ff; color: #0055cc; padding: 8px 15px; border-radius: 20px; font-size: 14px; }
+    .contact { text-align: center; }
+    .contact a { margin: 0 10px; text-decoration: none; color: #333; }
+    .contact a:hover { color: #0077ff; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>My Game Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#assets">Assets</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+      Xin chào! Mình là <strong>Đỗ Quốc Khánh</strong>, sinh viên năm cuối ngành lập trình Game. 
+      Mình yêu thích tạo ra trải nghiệm gameplay thú vị và thiết kế asset cho game.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <img src="imgs/CanLuc.png" alt="Can Luc">
+        <div class="card-content">
+          <h3>Căn Lực</h3>
+          <p>Game bắn theo lượt, căn lực và tính góc để hạ gục đối thủ.</p>
+          <p><small>Solo - Devtime 1 month</small></p>
+          <p><small>Tech: Unity, C#, DOTween, Aseprite, GitHub.</small></p>
+          <a href="CanLuc.html">Play / View</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="imgs/SummonerBattle.png" alt="Summoner Battle img">
+        <div class="card-content">
+          <h3>Summoner Batte</h3>
+          <p>Game triệu hồi, Auto battle trên bàn cờ lục giác.</p>
+          <p><small>Team 2 - devtime 4 months</small></p>
+          <p><small>Tech: Unity, C#</small></p>
+          <a href="Summonerbattle.html" target="_blank">Play / View</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="imgs/SummonerBattle.png" alt="Summoner Battle img">
+        <div class="card-content">
+          <h3>Defracture</h3>
+          <p>Rouge like tower defense 3d, với tộc hệ, roll shop và kỹ năng tower</p>
+          <p><small>Team 6 - 3 developers - 2 designs - 1 document - devtime 3 months</small></p>
+          <p><small>Tech: Unity, C#, piskel</small></p>
+          <a href="https://itch.io" target="_blank">Play / View</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>Email: <a href="mailto:khanhquocdo.qt@gmail.com">khanhquocdo.qt@gmail.com</a></p>
+      <p>
+        <a href="https://github.com/doquockhanh" target="_blank">GitHub</a> |
+        <a href="https://itch.io/profile/doquockhanh" target="_blank">Itch.io</a>
+      </p>
+    </div>
+  </section>
+</body>
+</html>
