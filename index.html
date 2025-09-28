@@ -5,31 +5,281 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Game Portfolio</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f9f9f9; color: #333; }
-    header { background: #fff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    header nav a { margin: 0 10px; text-decoration: none; color: #333; font-weight: bold; }
-    header nav a:hover { color: #0077ff; }
-    section { padding: 50px 20px; max-width: 1000px; margin: auto; }
-    h2 { text-align: center; margin-bottom: 30px; }
-    .projects, .assets { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
-    .card img { width: 100%; height: 180px; object-fit: cover; }
-    .card-content { padding: 15px; }
-    .skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-    .skill { background: #e6f0ff; color: #0055cc; padding: 8px 15px; border-radius: 20px; font-size: 14px; }
-    .contact { text-align: center; }
-    .contact a { margin: 0 10px; text-decoration: none; color: #333; }
-    .contact a:hover { color: #0077ff; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    header nav a:hover {
+      color: #0077ff;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #e6f0ff;
+      color: #0055cc;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .contact a:hover {
+      color: #0077ff;
+    }
+
+    /* Timeline Styles */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto 50px auto;
+      padding: 20px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #0077ff;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin: 40px 0;
+      width: 50%;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: -35px;
+      padding-right: 40px;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      padding-left: 40px;
+      text-align: left;
+    }
+
+    .timeline-content {
+      background: #fff;
+      padding: 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 0;
+      height: 0;
+      border: 12px solid transparent;
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      right: -24px;
+      border-left-color: #fff;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::before {
+      left: -24px;
+      border-right-color: #fff;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      background: #0077ff;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 0 0 4px #0077ff;
+      z-index: 2;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -9px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -9px;
+    }
+
+    .timeline-date {
+      position: absolute;
+      top: -30px;
+      font-size: 12px;
+      color: #666;
+      font-weight: bold;
+      background: #f0f0f0;
+      padding: 4px 8px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-date {
+      right: 0;
+    }
+
+    .timeline-item:nth-child(even) .timeline-date {
+      left: 0;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h3 {
+      margin: 0 0 10px 0;
+      color: #333;
+      font-size: 20px;
+    }
+
+    .project-content p {
+      margin: 8px 0;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    .project-content small {
+      color: #888;
+      font-size: 12px;
+    }
+
+    .project-content a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 16px;
+      background: #0077ff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .project-content a:hover {
+      background: #005ccc;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 50px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content::before,
+      .timeline-item:nth-child(even) .timeline-content::before {
+        left: -24px !important;
+        right: auto !important;
+        border-right-color: #fff !important;
+        border-left-color: transparent !important;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-dot,
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: 11px !important;
+        right: auto !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-date,
+      .timeline-item:nth-child(even) .timeline-date {
+        left: 0 !important;
+        right: auto !important;
+      }
+    }
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <header>
     <h1>My Game Portfolio</h1>
     <nav>
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#assets">Assets</a>
+      <a href="#timeline">Timeline</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -39,45 +289,78 @@
   <section id="about">
     <h2>About Me</h2>
     <p style="text-align:center; max-width:700px; margin:auto;">
-      Xin chào! Mình là <strong>Đỗ Quốc Khánh</strong>, sinh viên năm cuối ngành lập trình Game. 
+      Xin chào! Mình là <strong>Đỗ Quốc Khánh</strong>, sinh viên năm cuối ngành lập trình Game.
       Mình yêu thích tạo ra trải nghiệm gameplay thú vị và thiết kế asset cho game.
     </p>
   </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <img src="imgs/CanLuc.png" alt="Can Luc">
-        <div class="card-content">
-          <h3>Căn Lực</h3>
-          <p>Game bắn theo lượt, căn lực và tính góc để hạ gục đối thủ.</p>
-          <p><small>Solo - Devtime 1 month</small></p>
-          <p><small>Tech: Unity, C#, DOTween, Aseprite, GitHub.</small></p>
-          <a href="CanLuc.html">Play / View</a>
+  <!-- Timeline -->
+  <section id="timeline">
+    <h2>Development Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">09/2025</div>
+        <div class="timeline-content">
+          <div class="project-card">
+            <img src="Imgs/CanLuc.png" alt="Can Luc">
+            <div class="project-content">
+              <h3>Căn Lực</h3>
+              <p>Game bắn theo lượt, căn lực và tính góc để hạ gục đối thủ.</p>
+              <p><small>Solo - Devtime 1 month</small></p>
+              <p><small>Tech: Unity, C#, DOTween, Aseprite, GitHub.</small></p>
+              <a href="CanLuc.html">View Details</a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <img src="imgs/SummonerBattle.png" alt="Summoner Battle img">
-        <div class="card-content">
-          <h3>Summoner Batte</h3>
-          <p>Game triệu hồi, Auto battle trên bàn cờ lục giác.</p>
-          <p><small>Team 2 - devtime 4 months</small></p>
-          <p><small>Tech: Unity, C#</small></p>
-          <a href="Summonerbattle.html" target="_blank">Play / View</a>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">06/2025 - 09/2025</div>
+        <div class="timeline-content">
+          <div class="project-card">
+            <img src="Imgs/SummonerBattle.png" alt="Defracture">
+            <div class="project-content">
+              <h3>Defracture</h3>
+              <p>Rouge-like tower defense 3D, với tộc hệ, roll shop và kỹ năng tower</p>
+              <p><small>Team 6 - 3 developers - 2 designs - 1 document - devtime 3 months</small></p>
+              <p><small>Tech: Unity, C#, piskel</small></p>
+              <a href="https://itch.io" target="_blank">Play on Itch.io</a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <img src="imgs/SummonerBattle.png" alt="Summoner Battle img">
-        <div class="card-content">
-          <h3>Defracture</h3>
-          <p>Rouge like tower defense 3d, với tộc hệ, roll shop và kỹ năng tower</p>
-          <p><small>Team 6 - 3 developers - 2 designs - 1 document - devtime 3 months</small></p>
-          <p><small>Tech: Unity, C#, piskel</small></p>
-          <a href="https://itch.io" target="_blank">Play / View</a>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">02/2025 - 06/2025</div>
+        <div class="timeline-content">
+          <div class="project-card">
+            <img src="Imgs/SummonerBattle.png" alt="Summoner Battle">
+            <div class="project-content">
+              <h3>Summoner Battle</h3>
+              <p>Game triệu hồi, Auto battle trên bàn cờ lục giác.</p>
+              <p><small>Team 2 - devtime 4 months</small></p>
+              <p><small>Tech: Unity, C#</small></p>
+              <a href="Summonerbattle.html">View Details</a>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span class="skill">Unity</span>
+      <span class="skill">C#</span>
+      <span class="skill">Pixel Art</span>
+      <span class="skill">Game Design</span>
+      <span class="skill">Aseprite</span>
+      <span class="skill">DOTween</span>
     </div>
   </section>
 
