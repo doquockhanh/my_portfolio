@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defracture - Project Detail</title>
+    <style>
+        /* Color System Variables */
+        :root {
+            /* Primary Colors */
+            --primary-blue: #0077ff;
+            --primary-blue-dark: #005ccc;
+            --primary-blue-light: #58a6ff;
+
+            /* Background Colors */
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #3d3d3d;
+            --bg-card: #2d2d2d;
+            --bg-header: #2d2d2d;
+
+            /* Text Colors */
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --text-muted: #888;
+
+            /* Accent Colors */
+            --accent-success: #28a745;
+            --accent-warning: #ffc107;
+            --accent-danger: #dc3545;
+
+            /* Shadow Colors */
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.3);
+            --shadow-dark: rgba(0, 0, 0, 0.4);
+
+            /* Border Colors */
+            --border-light: #404040;
+            --border-medium: #555;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--bg-header);
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px var(--shadow-medium);
+        }
+
+        header a {
+            text-decoration: none;
+            color: var(--primary-blue-light);
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .detail {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .detail img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px var(--shadow-medium);
+        }
+
+        /* New sections styling */
+        .section-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: var(--bg-card);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px var(--shadow-medium);
+            border: 1px solid var(--border-light);
+        }
+
+        .section-title {
+            color: var(--primary-blue-light);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .enemy-grid,
+        .action-grid,
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .enemy-card,
+        .action-card,
+        .asset-card {
+            background: var(--bg-tertiary);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+            border: 1px solid var(--border-light);
+        }
+
+        .enemy-card h4,
+        .action-card h4,
+        .asset-card h4 {
+            margin: 0 0 10px 0;
+            color: var(--text-primary);
+        }
+
+        .enemy-card img,
+        .action-card img,
+        .asset-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .asset-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .asset-item {
+            text-align: center;
+            padding: 10px;
+            background: var(--bg-tertiary);
+            border-radius: 5px;
+            border: 1px solid var(--border-light);
+        }
+
+        .asset-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #0077ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background: #005ccc;
+        }
+
+        .pixel-art {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            /* fallback cho trình duyệt khác */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">&larr; Back to Portfolio</a>
+    </header>
+
+    <section>
+        <h1>Defracture</h1>
+        <p><strong>Thể loại:</strong> Tower Defense</p>
+        <p><strong>Thời gian phát triển:</strong> 3 tháng</p>
+        <p><strong>Team:</strong> 6</p>
+        <p><strong>Tech:</strong> Unity, C#, Blender, GitHub</p>
+
+        <h2>Mô tả</h2>
+        <p>
+            Defracture là một game tower defense 3D Rogue Like, Lấy cảm hứng từ
+            Element and Build và Emberward và kết hợp các cơ chế cốt lõi như tộc hệ, kỹ năng, roll shop,...
+            Được chọn để làm dự án tốt nghiệp. Thời gian phát triển ngắn nên độ hoàn thiện gameplay thấp và dùng nhiều asset ngoài nên không public được.
+        </p>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Roll tower & shop: Sử dụng vàng để roll shop tìm tower phù hợp.</li>
+            <li>Update tower: Merge 3 tower cùng loại để ra bản nâng cấp.</li>
+            <li>Địa hình: Roll khối và đặt để tạo địa hình. Dùng để tăng khoảng cách kẻ địch phải di chuyển và tạo không
+                gian đặt tower.</li>
+            <li>Tower: Tấn công kẻ địch trong phạm vi, sử dụng kỹ năng khi đủ năng lượng and/or điều kiện.</li>
+            <li>Tộc hệ: Kích mốc tộc hệ để được buff tương ứng.</li>
+            <li>Stats: Khá tương đồng với stats của TFT. Nhưng giản lược để chỉ giữ stats phù hợp.</li>
+            <li>Status Effects: Các hiệu ứng trên unit, ví dụ như không thể chỉ định, trở nên tàng hình, thiêu đốt, hất
+                tung,..</li>
+            <li>Luới vuông: Di chuyển 4 hướng / 8 hướng, A* pathfinding.</li>
+        </ul>
+
+        <h2>Vai trò của mình</h2>
+        <ul>
+            <li>Thiết kế và code hệ thống tower, tộc hệ, kỹ năng, stats, status effects.</li>
+            <li>Quản lý git.</li>
+            <li>Hỗ trợ thành viên.</li>
+        </ul>
+
+        <!-- Enemies Section -->
+        <div class="section-container">
+            <h2 class="section-title">Towers</h2>
+            <p>Một số loại Towers trong game (6/18)</p>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/Defracture/arrowTower.png">
+                    <h4>Arrow Tower - Chủ lực / Cơ giới</h4>
+                    <p>Nội tại Mưa tên: đòn tấn công có tỉ lệ bắn thêm nhiều mũi tên, gây n% sát thương gốc. Các mũi tên
+                        giảm m giáp của kẻ địch (không thể giảm thêm khi đã dưới 0)</p>
+                </div>
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/Defracture/BomTower.png" alt="">
+                    <h4>Bom Tower - Chủ lực / Bomba</h4>
+                    <p>Kỹ năng: Bắn quả bom lớn vào nơi đông kẻ địch, sát thương vùng</p>
+                </div>
+            </div>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/Defracture/PiercingTower.png" alt="">
+                    <h4>Piercing Shade Tower - Chủ lực / Ám ảnh</h4>
+                    <p>Nội tại: Đòn đánh ghim vũ khí vào kẻ địch. Rút ghim để kết liễu kẻ địch khi đủ sát thương</p>
+                    <p>Kỹ năng: Tăng tốc độ đánh và đòn đánh ghim thêm +1 ám khí</p>
+                </div>
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/Defracture/WindFlowTower.png" alt="">
+                    <h4>Wind Flow Tower - Pháp sư / Gió</h4>
+                    <p>Kỹ năng: Triệu hồi lốc ở vị trí kẻ địch ngẫu nhiên trong tầm, hất tung và gây sát thương liên tục
+                    </p>
+                </div>
+            </div>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/Defracture/VolcanoTower.png" alt="">
+                    <h4>Volcano Peak Tower - Pháp sư / Lửa</h4>
+                    <p>Nội tại: Gây sát thương thiêu đốt kẻ địch</p>
+                    <p>Kỹ năng: Bắn ra cột dung nham vào vị trí kẻ địch đầu tiên trong hàng ngũ và để lại vùng dung nham
+                        tồn tại trong n giây. Gây sát thương lên kẻ địch bên trên </p>
+                </div>
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/Defracture/FuryBoostTower.png" alt="">
+                    <h4>Fury Boost Tower - Hỗ trợ / Gió</h4>
+                    <p>Nội tại: Tăng tốc độ đánh và gây thêm sát thương phép onhit</p>
+                    <p>Kỹ năng: trong n giây đòn đánh nảy sang trụ gần đó để ban nội tại trong x giây, mỗi cộng dồn sau
+                        đó sẽ nhận thêm xx% hiệu ứng</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Một số Enemy và Abilities</h2>
+            <p>Skill của enemy.</p>
+            <p>Enemy ngoài chỉ số cơ bản và tốc độ di chuyển thì có thể tùy chỉnh kỹ năng cho enemy như sau.
+                <span>
+                    <ul>
+                        <li>
+                            Kỹ năng: tăng tốc, dịch chuyển, tạo giáp, hồi máu, tàng hình, nhiễu trụ,...
+                        </li>
+                        <li>
+                            Điều kiện: Mỗi interval, máu dưới ngưỡng, spawn, before death, got bursted damage,....
+                        </li>
+                        <li>
+                            Cách phối: Chọn một kỹ năng và một điều kiện cần để kích hoạt.
+                        </li>
+                    </ul>
+                </span>
+            </p>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/Defracture/DogEnemies.png" alt="">
+                    <h4>Dog</h4>
+                    <p>Kỹ năng: Tăng tốc chạy khi dưới ngưỡng máu</p>
+                </div>
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/Defracture/Inhibitor.png" alt="">
+                    <h4>Inhibitor</h4>
+                    <p>Kỹ năng: khi chết gây nhiễu trụ ở gần</p>
+                </div>
+            </div>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/Defracture/N.O.P.E.png" alt="">
+                    <h4>N.O.P.E (No Optical Presence Entity)</h4>
+                    <p>Kỹ năng: Trở nên vô hình trong vài giây khi dưới ngưỡng máu</p>
+                </div>
+                <div class="enemy-card">
+                    <img class="pixel-art" src="Imgs/Defracture/TheRegenator.png" alt="">
+                    <h4>The Regenator</h4>
+                    <p>Kỹ năng: Hồi lại máu nếu bị burst sát thương (nhận quá nhiều sát thương trong vài giây)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gameplay Screenshots -->
+        <div class="section-container">
+            <h2 class="section-title">Một số Gameplay Screenshots</h2>
+            <div class="detail">
+                <img src="Imgs/Defracture/dfs1.png" alt="Gameplay 1">
+                <img src="Imgs/Defracture/Dfs3.png" alt="Gameplay 3">
+            </div>
+            <div class="detail">
+                <img src="Imgs/Defracture/Dfs2.png" alt="Gameplay 2">
+            </div>
+        </div>
+
+
+    </section>
+</body>
+
+</html>
