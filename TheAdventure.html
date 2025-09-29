@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Adventure - Project Detail</title>
+    <style>
+        /* Color System Variables */
+        :root {
+            /* Primary Colors */
+            --primary-blue: #0077ff;
+            --primary-blue-dark: #005ccc;
+            --primary-blue-light: #58a6ff;
+
+            /* Background Colors */
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #3d3d3d;
+            --bg-card: #2d2d2d;
+            --bg-header: #2d2d2d;
+
+            /* Text Colors */
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --text-muted: #888;
+
+            /* Accent Colors */
+            --accent-success: #28a745;
+            --accent-warning: #ffc107;
+            --accent-danger: #dc3545;
+
+            /* Shadow Colors */
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.3);
+            --shadow-dark: rgba(0, 0, 0, 0.4);
+
+            /* Border Colors */
+            --border-light: #404040;
+            --border-medium: #555;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--bg-header);
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px var(--shadow-medium);
+        }
+
+        header a {
+            text-decoration: none;
+            color: var(--primary-blue-light);
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .detail {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .detail img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px var(--shadow-medium);
+        }
+
+        /* New sections styling */
+        .section-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: var(--bg-card);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px var(--shadow-medium);
+            border: 1px solid var(--border-light);
+        }
+
+        .section-title {
+            color: var(--primary-blue-light);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .enemy-grid,
+        .action-grid,
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .enemy-card,
+        .action-card,
+        .asset-card {
+            background: var(--bg-tertiary);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+            border: 1px solid var(--border-light);
+        }
+
+        .enemy-card h4,
+        .action-card h4,
+        .asset-card h4 {
+            margin: 0 0 10px 0;
+            color: var(--text-primary);
+        }
+
+        .enemy-card img,
+        .action-card img,
+        .asset-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .asset-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .asset-item {
+            text-align: center;
+            padding: 10px;
+            background: var(--bg-tertiary);
+            border-radius: 5px;
+            border: 1px solid var(--border-light);
+        }
+
+        .asset-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #0077ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background: #005ccc;
+        }
+
+        .pixel-art {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            /* fallback cho trình duyệt khác */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">&larr; Back to Portfolio</a>
+    </header>
+
+    <section>
+        <h1>The Adventure</h1>
+        <p><strong>Thể loại:</strong> 2d platformer action</p>
+        <p><strong>Thời gian phát triển:</strong> 1,5 tháng</p>
+        <p><strong>Team:</strong> 4</p>
+        <p><strong>Tech:</strong> Unity, C#</p>
+        <a href="https://doquockhanh.itch.io/the-adventure" target="_blank" class="btn">Play on Itch.io</a>
+
+        <h2>Mô tả</h2>
+        <p>
+            2D platformer hành động. Người chơi điều khiển một kiếm sĩ dũng cảm, vượt qua nhiều màn chơi bằng cách chạy,
+            nhảy, né chướng ngại vật và chiến đấu với kẻ địch. Mục tiêu là đi đến điểm cuối màn trong khi sống sót và
+            tiêu diệt càng nhiều kẻ địch càng tốt.
+        </p>
+
+        <!-- Gameplay Screenshots -->
+        <div class="section-container">
+            <h2 class="section-title">Một số Gameplay Screenshots</h2>
+            <div class="detail">
+                <img src="Imgs/TheAdventure/TAs1.png" alt="Gameplay 1">
+                <img src="Imgs/TheAdventure/TAs2.png" alt="Gameplay 2">
+            </div>
+            <div class="detail">
+                <img src="Imgs/TheAdventure/TAs3.png" alt="Gameplay 2">
+                <img src="Imgs/TheAdventure/TAs4.png" alt="Gameplay 2">
+            </div>
+        </div>
+
+
+    </section>
+</body>
+
+</html>

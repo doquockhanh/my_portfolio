@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Off - Project Detail</title>
+    <style>
+        /* Color System Variables */
+        :root {
+            /* Primary Colors */
+            --primary-blue: #0077ff;
+            --primary-blue-dark: #005ccc;
+            --primary-blue-light: #58a6ff;
+
+            /* Background Colors */
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #3d3d3d;
+            --bg-card: #2d2d2d;
+            --bg-header: #2d2d2d;
+
+            /* Text Colors */
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --text-muted: #888;
+
+            /* Accent Colors */
+            --accent-success: #28a745;
+            --accent-warning: #ffc107;
+            --accent-danger: #dc3545;
+
+            /* Shadow Colors */
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.3);
+            --shadow-dark: rgba(0, 0, 0, 0.4);
+
+            /* Border Colors */
+            --border-light: #404040;
+            --border-medium: #555;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--bg-header);
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px var(--shadow-medium);
+        }
+
+        header a {
+            text-decoration: none;
+            color: var(--primary-blue-light);
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .detail {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .detail img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px var(--shadow-medium);
+        }
+
+        /* New sections styling */
+        .section-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: var(--bg-card);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px var(--shadow-medium);
+            border: 1px solid var(--border-light);
+        }
+
+        .section-title {
+            color: var(--primary-blue-light);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .enemy-grid,
+        .action-grid,
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .enemy-card,
+        .action-card,
+        .asset-card {
+            background: var(--bg-tertiary);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+            border: 1px solid var(--border-light);
+        }
+
+        .enemy-card h4,
+        .action-card h4,
+        .asset-card h4 {
+            margin: 0 0 10px 0;
+            color: var(--text-primary);
+        }
+
+        .enemy-card img,
+        .action-card img,
+        .asset-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .asset-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .asset-item {
+            text-align: center;
+            padding: 10px;
+            background: var(--bg-tertiary);
+            border-radius: 5px;
+            border: 1px solid var(--border-light);
+        }
+
+        .asset-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #0077ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background: #005ccc;
+        }
+
+        .pixel-art {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            /* fallback cho trình duyệt khác */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">&larr; Back to Portfolio</a>
+    </header>
+
+    <section>
+        <h1>Light Off</h1>
+        <p><strong>Thể loại:</strong> 2d platformer action</p>
+        <p><strong>Thời gian phát triển:</strong> 1 tháng</p>
+        <p><strong>Team:</strong> 1</p>
+        <p><strong>Tech:</strong> Unity, C#</p>
+
+        <h2>Mô tả</h2>
+        <p>
+            Light Off là một game 2d platformer action với lối chơi đơn giản, kẻ địch ở sáng, bạn ở tối. 
+            Tiêu diệt kẻ địch và đi đến đích để giành chiến thắng.
+        </p>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Light 2d: Sử dụng light 2d để tạo vùng sáng.</li>
+            <li>Kẻ địch: Nhìn thấy player khi player ở sáng và không bị che khuất, xác định mơ hồ vị trí player khi bị tấn công và đánh trả.</li>
+            <li>Player: Có 2 projectileh: bắn thẳng và boomerang.</li>
+            <li>Stats: Các chỉ số sinh tồn và tấn công.</li>
+            <li>Nhiệm vụ: Hoàn thành tất cả nhiệm vụ trước khi được sang màn tiếp theo.</li>
+        </ul>
+
+        <!-- Enemies Section -->
+        <div class="section-container">
+            <h2 class="section-title">Enemies</h2>
+            <p>Một số loại Enemy trong game</p>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <h4>Bombber</h4>
+                    <p>Ném bom vào player</p>
+                </div>
+                <div class="enemy-card">
+                    <h4>Archer</h4>
+                    <p>Bắn tên vào player, projectile chính xác hơn</p>
+                </div>
+            </div>
+            <div class="enemy-grid">
+                <div class="enemy-card">
+                    <h4>Ghost</h4>
+                    <p>Bay bất kể địa hình. nhìn thấy player bất kể bóng tối. Vai trò quấy nhiễu</p>
+                </div>
+                <div class="enemy-card">
+                    <h4>Boss</h4>
+                    <p>Bắn 3 mũi tên tỏa ra về phía player</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gameplay Screenshots -->
+        <div class="section-container">
+            <h2 class="section-title">Một số Gameplay Screenshots</h2>
+                <div class="detail">
+                    <img src="Imgs/LightOff/LOs1.png" alt="Gameplay 1">
+            </div>
+            <div class="detail">
+                <img src="Imgs/LightOff/LOs3.png" alt="Gameplay 2">
+            </div>
+        </div>
+
+
+    </section>
+</body>
+
+</html>
